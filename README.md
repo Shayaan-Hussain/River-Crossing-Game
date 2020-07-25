@@ -1,7 +1,7 @@
 # River-Crossing-Game
 
-How to play:<br/>
-Go to 'River-Crossing-Game' directory and open 'River-Crossing-Game.exe'<br/>
+How to play:
+Go to 'River-Crossing-Game' directory and open 'River-Crossing-Game.exe'
 to start the game.
 
 This is a 2 player game. The person to get the most points by the end
@@ -40,4 +40,4 @@ Additional files used i.e. fonts, images and music can be found in
 the assets folder. Make sure to place the assets folder and configuration
 file in the same directory as the program before running it.
 
-						Game By:- Shayaan Hussain
+						                   Game By:- Shayaan Hussain
