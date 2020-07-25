@@ -6,7 +6,7 @@ Go to 'River-Crossing-Game' directory and open 'River-Crossing-Game.exe' to star
 This is a 2 player game. The person to get the most points by the end wins the game. Further, if the players decide to continue the game, the score keeps adding up to previous scores and if they choose to play again, the score resets to zero and you are taken to instructions screen where you can start the game.
 
 Controls:<br/>
-The controls for player 1 movement are up, down, left and right arrow keys.
+The controls for player 1 movement are up, down, left and right arrow keys.<br/>
 The controls for player 2 movement are w, s, a and d keys for up, down, left and right movement respectively.
 
 Obstacles:<br/> Initially there are 5 ships and 5 boats as moving obstacles and 10 rocks as fixed obstacles. As a round completes, 2 fixed obstacles are spawned. The speed of moving obstacles increases for a player if they complete a round.
