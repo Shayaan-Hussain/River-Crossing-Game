@@ -21,4 +21,4 @@ Both the players crash with an obstacle in the same round
 About the code:<br/>
 The initialization of variables has been done in "configuration.py" file and the main code for the game can be found in "game.py" file. Additional files used i.e. fonts, images and music can be found in the assets folder. Make sure to place the assets folder and configuration file in the same directory as the 'game.py' file before running it.
 
-#Game By:- Shayaan Hussain
+# Game By:- Shayaan Hussain
