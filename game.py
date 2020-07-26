@@ -25,9 +25,8 @@ def timetosec(timer):
 def displaygamebg(score1, score2):
     scorep1disp = font1.render(f"Score P1: {score1}", True, (0, 0, 0))
     scorep2disp = font1.render(f"Score P2: {score2}", True, (0, 0, 0))
-    rounddisp = font3.render(f"Round {roundplay}", True, (0, 0, 0))
-    activeplayer = font2.render("Active", True, (0, 0, 0))
     time_elpassed = timetosec(end_time) - timetosec(starting_time)
+    rounddisp = font3.render(f"Round {roundplay}", True, (0, 0, 0))
     timedisp = font2.render(f"Time : {time_elpassed}", True, (0, 0, 0))
     screen.blit(seabg, (0, 0))
     for i in grassY:
@@ -75,7 +74,6 @@ def checkboat(boatX, boatY, playerX, playerY):
 
 # This function displays Game Over screen
 def gameoverdisp(score1, score2):
-    gameovertext = font3.render("Game Over", True, (0, 0, 0))
     player1score = font2.render(f"Player 1: {score1}", True, (0, 0, 255))
     player2score = font2.render(f"Player 2: {score2}", True, (255, 0, 0))
     if score1 > score2:
@@ -337,6 +335,7 @@ while gameloop:
                         p1crash = True
                         p1scorelist.append(scorep1)
                         scorep1 = 0
+                        hitobstart = time.time()
                         
                 elif player2disp:
                     if checkrock(rockX[i], rockY[i], player2X, player2Y):
@@ -346,6 +345,7 @@ while gameloop:
                         scorep2 = 0
                         rockspawn()
                         rockspawn()
+                        hitobstart = time.time()
             
             # Displaying ships and boats and checking collissions
             for i in range(0, 5):
@@ -396,6 +396,7 @@ while gameloop:
                         p1crash = True
                         p1scorelist.append(scorep1)
                         scorep1 = 0
+                        hitobstart = time.time()
                         
                     # Checking boat collissions for player 1
                     elif checkboat(boatX[i], boatY[i], player1X, player1Y):
@@ -403,6 +404,7 @@ while gameloop:
                         p1crash = True
                         p1scorelist.append(scorep1)
                         scorep1 = 0
+                        hitobstart = time.time()
                         
                 elif player2disp:
                     
@@ -437,6 +439,7 @@ while gameloop:
                         scorep2 = 0
                         rockspawn()
                         rockspawn()
+                        hitobstart = time.time()
                         
                     # Checking boat collissions for player 2
                     elif checkboat(boatX[i], boatY[i], player2X, player2Y):
@@ -446,6 +449,7 @@ while gameloop:
                         scorep2 = 0
                         rockspawn()
                         rockspawn()
+                        hitobstart = time.time()
                         
             # Win condition for player 1
             if player1disp:
@@ -460,6 +464,7 @@ while gameloop:
                         scorep1 += 60 - (timetaken * 4)
                     p1scorelist.append(scorep1)
                     scorep1 = 0
+                    winrstart = time.time()
                     
             # Win condition for player 2
             elif player2disp:
@@ -476,6 +481,7 @@ while gameloop:
                     scorep2 = 0
                     rockspawn()
                     rockspawn()
+                    winrstart = time.time()
             
             # Game Over condition
             if p1play == 5 and p2play == 5 or p1crash and p2crash:
@@ -483,7 +489,17 @@ while gameloop:
                 for i in range(0, 11):
                     row[i] = 0
                     rowcross[i] = 0
-                    
+            
+            # Displays "Hit with obstacle" on hitting obstacle
+            hitobsend = time.time()
+            if hitobsend - hitobstart < 2:
+                screen.blit(hitobs, (235, 330))
+            
+            # Displays "Won the round" when a player wins a round
+            winrend = time.time()
+            if winrend - winrstart < 2:
+                screen.blit(winround, (270,330))
+            
             # Displaying player's end point
             if player1disp:
                 screen.blit(end, (380, 86))
@@ -493,7 +509,7 @@ while gameloop:
             # Displaying players
             screen.blit(player1img, (player1X, player1Y))
             screen.blit(player2img, (player2X, player2Y))
-            
+            5
             if player1disp:
                 roundplay = p1play + 1
                 p2crash = False
@@ -519,27 +535,6 @@ while gameloop:
         
         # Getting current mouse position
         mouse = pg.mouse.get_pos()
-        
-        # Initializing rules to be displayed
-        name = font4.render(
-            "River Crossing Competition Game", True, (0, 0, 0))
-        info1 = font2.render(
-            "This is a 2 player game. Players get 5 points for", 
-            True, (0, 0, 0))
-        info2 = font2.render(
-            "passing fixed obstacles and 10 points for passing", 
-            True, (0, 0, 0))
-        info3 = font2.render("moving obstacles.", True, (0, 0, 0))
-        info4 = font2.render("The game ends if:", True, (0, 0, 0))
-        info5 = font2.render("1. Both players lose in same round", 
-                             True, (0, 0, 0))
-        info6 = font2.render("2. Both players complete 5 rounds", 
-                             True, (0, 0, 0))
-        info7 = font2.render("Controls are:", True, (0, 0, 0))
-        info8 = font2.render("Player 1", True, (0, 0, 0))
-        info9 = font2.render("Player 2", True, (0, 0, 0))
-        info10 = font1.render("Press the button to play the game", 
-                              True, (0, 0, 0))
         
         # Displaying Rules
         screen.blit(gamestart, (0, 0))
