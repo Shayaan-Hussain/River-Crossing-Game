@@ -5,21 +5,21 @@ from random import randint
 pg.init()
 
 # Importing required images
-seabg = pg.image.load(r'assets/seabg.png')
-grass = pg.image.load(r'assets/grass.png')
-brown = pg.image.load(r'assets/grassborder.png')
-end = pg.image.load(r'assets/END.png')
-gameover = pg.image.load(r'assets/gameover.png')
-gamestart=pg.image.load(r'assets/gamestartbg.png')
-p1cont=pg.image.load(r'assets/p1cont.png')
-p2cont=pg.image.load(r'assets/p2cont.png')
-icon=pg.image.load(r'assets/icon.png')
+seabg = pg.image.load('assets/seabg.png')
+grass = pg.image.load('assets/grass.png')
+brown = pg.image.load('assets/grassborder.png')
+end = pg.image.load('assets/END.png')
+gameover = pg.image.load('assets/gameover.png')
+gamestart = pg.image.load('assets/gamestartbg.png')
+p1cont = pg.image.load('assets/p1cont.png')
+p2cont = pg.image.load('assets/p2cont.png')
+icon = pg.image.load('assets/icon.png')
 
 # Initializing the fonts
-font1 = pg.font.Font(r'assets/comicsansms.ttf', 25)
-font2 = pg.font.Font(r'assets/courier.ttf', 25)
-font3 = pg.font.Font(r'assets/algerian.ttf', 40)
-font4 = pg.font.Font(r'assets/comicsansms.ttf', 40)
+font1 = pg.font.Font('assets/comicsansms.ttf', 25)
+font2 = pg.font.Font('assets/courier.ttf', 25)
+font3 = pg.font.Font('assets/algerian.ttf', 40)
+font4 = pg.font.Font('assets/comicsansms.ttf', 40)
 
 # Rendering texts
 name = font4.render(
@@ -42,8 +42,8 @@ hitobs = font4.render("Hit with obstacle", True, (0, 0, 0))
 winround = font4.render("Won the round", True, (0, 0, 0))
 
 # Creating a list to check which row player is on
-row=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-rowcross=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+row = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+rowcross = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
 # Initializing player 1
 player1img = pg.image.load('assets/player1.png')
@@ -53,7 +53,7 @@ player1ch = 0
 player1Y = 610
 player1disp = True
 scorep1 = 0
-p1scorelist=[]
+p1scorelist = []
 p1play = 0
 p1crash = False
 
@@ -65,7 +65,7 @@ player2ch = 0
 player2Y = 80
 player2disp = True
 scorep2 = 0
-p2scorelist=[]
+p2scorelist = []
 p2play = 0
 p2crash = False
 
