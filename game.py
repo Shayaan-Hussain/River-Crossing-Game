@@ -68,7 +68,7 @@ def checkboat(boatX, boatY, playerX, playerY):
         if boatX - playerX < 20 and boatX - playerX > -45:
             return True
         else:
-            print("hello")
+            print("hey")
             return False
     else:
         return False
