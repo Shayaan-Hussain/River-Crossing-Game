@@ -1,16 +1,12 @@
 import pygame as pg
 import time
 from configuration import *
-from pygame import mixer
 
 # Initializing pygame
 pg.init()
-mixer.init()
 screen = pg.display.set_mode((800, 655))
 pg.display.set_caption('River Crossing')
 pg.display.set_icon(icon)
-mixer.music.load('assets/music.mp3')
-mixer.music.play()
 
 # This function will convert time to seconds
 def timetosec(timer):
